@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import NavBar from "./components/Navbar";
+import {
+  MdMenuOpen,
+  MdNotificationImportant,
+  MdAccountBox,
+  MdMessage,
+} from "react-icons/md";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Organisateur from "./pages/Organisateur";
 
 function App() {
+  const [showNav, setShowNav] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <div className="App">
+          <header>
+            <MdMenuOpen onClick={() => setShowNav(!showNav)} />
+            KEY EVENT {""}
+            <MdMessage
+              size="1.9rem"
+              style={{ color: "blue", float: "right" }}
+            />
+            <MdNotificationImportant
+              size="1.9rem"
+              style={{ color: "blue", float: "right" }}
+            />
+            <MdAccountBox
+              size="1.9rem"
+              style={{ color: "blue", float: "right" }}
+            />
+          </header>
+          <NavBar show={showNav} />
+          <div className="min">
+            <Route path="/" exact={true} component={Organisateur} />
+          </div>
+        </div>
+      </Router>
+    </>
   );
 }
 
