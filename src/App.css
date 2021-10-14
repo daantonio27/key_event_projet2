@@ -10,7 +10,7 @@ body {
 
 header {
   padding: 30px;
-  background-color: #7b7b7b;
+  background-color: #c7d9f5;
   height: 40px;
   margin-top: auto;
   padding-top: 0%;
@@ -81,6 +81,6 @@ ul li svg {
   padding: 0rem 0rem 0rem 10rem;
 }
 
-.form-control .form-controltxt {
+.form-control {
   text-align: center;
 }
