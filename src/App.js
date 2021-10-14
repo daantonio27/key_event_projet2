@@ -18,7 +18,10 @@ function App() {
       <Router>
         <div className="App">
           <header>
-            <MdMenuOpen onClick={() => setShowNav(!showNav)} />
+            <MdMenuOpen
+              style={{ color: "blue" }}
+              onClick={() => setShowNav(!showNav)}
+            />
             KEY EVENT {""}
             <MdMessage
               size="1.9rem"
